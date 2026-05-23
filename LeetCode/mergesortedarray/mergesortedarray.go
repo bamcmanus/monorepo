@@ -16,11 +16,4 @@ Constraints:
 - -10^9 <= nums1[i], nums2[j] <= 10^9
 */
 func merge(nums1 []int, m int, nums2 []int, n int) {
-	p1 := m - 1
-	p2 := n - 1
-	p := m + n - 1
-	for p1 > 0 && p2 > 0 {
-		largest
-
-	}
 }
