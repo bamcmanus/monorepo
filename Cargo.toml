@@ -1,0 +1,3 @@
+[workspace]
+members = ["hello-world-rust"]
+resolver = "2"

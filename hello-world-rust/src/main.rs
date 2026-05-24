@@ -1,9 +1,11 @@
+use colored::Colorize;
+
 fn greetings(name: &str) -> String {
     return format!("Hello {}", name);
 }
 
 fn main() {
-    println!("{}", greetings("world"))
+    println!("{}", greetings("world").green());
 }
 
 #[cfg(test)]

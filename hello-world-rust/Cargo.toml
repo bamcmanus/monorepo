@@ -1,0 +1,11 @@
+[package]
+name = "hello-world-rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+colored = "3"
+
+[[bin]]
+name = "hello-world-rust"
+path = "src/main.rs"

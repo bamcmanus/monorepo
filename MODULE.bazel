@@ -1,4 +1,5 @@
 bazel_dep(name = "gazelle", version = "0.51.0")
+bazel_dep(name = "bazel_env.bzl", version = "0.7.2")
 
 include("//:go.MODULE.bazel")
 include("//:rust.MODULE.bazel")

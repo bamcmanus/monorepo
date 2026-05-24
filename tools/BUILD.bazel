@@ -1,0 +1,11 @@
+load("@bazel_env.bzl", "bazel_env")
+
+bazel_env(
+    name = "bazel_env",
+    toolchains = {},
+    tools = {
+        "cargo": "@rules_rust//tools/upstream_wrapper:cargo",
+        "rustc": "@rules_rust//tools/upstream_wrapper:rustc",
+        "rustfmt": "@rules_rust//tools/upstream_wrapper:rustfmt",
+    },
+)
