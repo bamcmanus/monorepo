@@ -1,3 +1,3 @@
 [workspace]
-members = ["hello-world-rust", "rust-control-flow", "rust-functions", "rust-types", "variables-rust"]
+members = ["guessing-game","hello-world-rust", "rust-control-flow", "rust-functions", "rust-types", "variables-rust"]
 resolver = "2"
