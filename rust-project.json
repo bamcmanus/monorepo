@@ -1,0 +1,78 @@
+{
+  "sysroot": "/private/var/tmp/_bazel_brentmcmanus/822ea8c09e9b278d5362320908504631/external/rules_rust++rust+rust_analyzer_1.95.0_tools",
+  "sysroot_src": "/private/var/tmp/_bazel_brentmcmanus/822ea8c09e9b278d5362320908504631/external/rules_rust++rust+rust_analyzer_1.95.0_tools/lib/rustlib/src/library",
+  "crates": [
+    {
+      "display_name": "hello_world_rust",
+      "root_module": "/Users/brentmcmanus/Repositories/bamcmanus/monorepo/hello-world-rust/src/main.rs",
+      "edition": "2021",
+      "deps": [],
+      "is_workspace_member": true,
+      "cfg": [
+        "test",
+        "debug_assertions"
+      ],
+      "target": "aarch64-apple-darwin",
+      "env": {
+        "CARGO_CFG_TARGET_ARCH": "aarch64",
+        "CARGO_CFG_TARGET_OS": "macos",
+        "CARGO_CRATE_NAME": "hello_world_rust",
+        "CARGO_MANIFEST_DIR": "/private/var/tmp/_bazel_brentmcmanus/822ea8c09e9b278d5362320908504631/execroot/_main/hello-world-rust",
+        "CARGO_PKG_AUTHORS": "",
+        "CARGO_PKG_DESCRIPTION": "",
+        "CARGO_PKG_HOMEPAGE": "",
+        "CARGO_PKG_NAME": "hello-world-rust",
+        "CARGO_PKG_VERSION": "0.0.0",
+        "CARGO_PKG_VERSION_MAJOR": "0",
+        "CARGO_PKG_VERSION_MINOR": "0",
+        "CARGO_PKG_VERSION_PATCH": "0",
+        "CARGO_PKG_VERSION_PRE": "",
+        "REPOSITORY_NAME": "",
+        "ZERO_AR_DATE": "1"
+      },
+      "is_proc_macro": false,
+      "build": {
+        "label": "hello-world-rust:hello-world-rust",
+        "build_file": "/Users/brentmcmanus/Repositories/bamcmanus/monorepo/hello-world-rust/BUILD",
+        "target_kind": "bin"
+      }
+    }
+  ],
+  "runnables": [
+    {
+      "program": "bazel",
+      "args": [
+        "build",
+        "{label}"
+      ],
+      "cwd": "/Users/brentmcmanus/Repositories/bamcmanus/monorepo",
+      "kind": "check"
+    },
+    {
+      "program": "bazel",
+      "args": [
+        "test",
+        "{label}",
+        "--test_output",
+        "streamed",
+        "--test_arg",
+        "--nocapture",
+        "--test_arg",
+        "--exact",
+        "--test_arg",
+        "{test_id}"
+      ],
+      "cwd": "/Users/brentmcmanus/Repositories/bamcmanus/monorepo",
+      "kind": "testOne"
+    },
+    {
+      "program": "bazel",
+      "args": [
+        "run",
+        "hello-world-rust:hello-world-rust"
+      ],
+      "cwd": "/Users/brentmcmanus/Repositories/bamcmanus/monorepo",
+      "kind": "run"
+    }
+  ]
+}
