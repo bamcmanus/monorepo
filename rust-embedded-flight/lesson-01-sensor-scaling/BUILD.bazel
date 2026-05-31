@@ -1,0 +1,12 @@
+load("@rules_rust//rust:defs.bzl", "rust_library", "rust_test")
+
+rust_library(
+    name = "lib",
+    srcs = ["src/lib.rs"],
+    crate_name = "lesson_01_sensor_scaling",
+)
+
+rust_test(
+    name = "test",
+    crate = ":lib",
+)
