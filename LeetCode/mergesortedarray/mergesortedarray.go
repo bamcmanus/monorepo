@@ -1,5 +1,7 @@
 package mergesortedarray
 
+import "fmt"
+
 /*
 You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n,
 representing the number of elements in nums1 and nums2 respectively. Merge nums1 and nums2 into a single array
@@ -16,4 +18,39 @@ Constraints:
 - -10^9 <= nums1[i], nums2[j] <= 10^9
 */
 func merge(nums1 []int, m int, nums2 []int, n int) {
+	// both empty
+	if m == 0 && n == 0 {
+		return
+	}
+	// list 2 empty
+	if n == 0 {
+		return
+	}
+	// list 1 empty bot not list 2
+	if m == 0 {
+		copy(nums1, nums2)
+	}
+	writeIdx := m + n - 1
+	nums2LastElement := n - 1
+	nums1LastElement := m - 1
+	for writeIdx >= 0 {
+		if nums2LastElement < 0 {
+			fmt.Println("list two is empty, copying next element of 1")
+			nums1[writeIdx] = nums1[nums1LastElement]
+			nums1LastElement -= 1
+		} else if nums1LastElement < 0 {
+			fmt.Println("list one is empty, copying next element of 2")
+			nums1[writeIdx] = nums2[nums2LastElement]
+			nums2LastElement -= 1
+		} else if nums1[nums1LastElement] > nums2[nums2LastElement] {
+			fmt.Println("list one element is bigger")
+			nums1[writeIdx] = nums1[nums1LastElement]
+			nums1LastElement -= 1
+		} else {
+			fmt.Println("list one element is bigger")
+			nums1[writeIdx] = nums2[nums2LastElement]
+			nums2LastElement -= 1
+		}
+		writeIdx -= 1
+	}
 }
