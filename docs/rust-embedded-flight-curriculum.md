@@ -76,6 +76,13 @@ The agent should create:
 - public function, type, trait, or enum stubs required by the lesson
 - inline unit tests by default
 - integration tests only when the lesson explicitly benefits from them
+- a top-level lesson comment in `src/lib.rs` that clearly states the learning
+  objectives and the learner-owned work to complete
+- a learning-journal section in `src/lib.rs` that copies the lesson's
+  self-assessment prompts and provides a clear place for learner answers
+- explanatory comments near important Rust teaching points, such as derives,
+  tuple structs, ownership, borrowing, lifetimes, trait bounds, enum matching,
+  buffer ownership, `no_std`, checked arithmetic, and error variants
 - short TODO comments where useful
 
 The agent should update:
@@ -96,6 +103,22 @@ Starter implementations should compile with safe placeholder values. Prefer
 wrong-but-safe defaults such as `0`, `false`, `None`, or
 `Err(Error::NotImplemented)` over stubs that intentionally panic. Tests should
 fail by assertion until the learner implements the logic.
+
+Scaffold comments should make the lesson self-teaching without becoming a
+reference solution. Explain what generated derives do and why they are present,
+what each public API is meant to teach, and what each test proves about the Rust
+concept. Comments may point out hazards such as unsigned underflow, moved values,
+out-of-bounds indexing, partial writes, or panic paths, but should not spell out
+the final implementation line-by-line.
+
+Because this repository also acts as a learning journal, each lesson scaffold
+should include the lesson's self-assessment prompts in `src/lib.rs`, with an
+obvious answer area. Put this learning-journal section at the bottom of the file
+by default, after the tests, so the lesson flows from problem setup, to concepts,
+to implementation, to tests, to learner reflection. The scaffold should leave
+answers blank. The learner may fill them in as ordinary comments when completing
+the lesson. Future agents reviewing completion should accept answers in the
+source file, in chat, or an explicit learner decision to skip them.
 
 Compiler-error teaching moments should appear as notes in this document or in
 lesson instructions, not as intentionally broken scaffolded code.
@@ -120,8 +143,8 @@ Every 4 lessons, do a phase checkpoint before moving on.
 Use this checklist as the source of truth for curriculum progress. Future agents
 should read this section before scaffolding or reviewing lessons.
 
-- [ ] Lesson 1: Sensor Scaling Basics
-- [ ] Lesson 2: Ownership And Copy Semantics
+- [x] Lesson 1: Sensor Scaling Basics
+- [x] Lesson 2: Ownership And Copy Semantics
 - [ ] Lesson 3: Slices And Fixed Windows
 - [ ] Lesson 4: Caller-Provided Buffers
 - [ ] Phase 1 Review Checkpoint
@@ -169,6 +192,9 @@ After scaffolding, the agent should report:
 - files created or updated
 - Bazel test command
 - expected initial test status
+- where the in-file lesson objectives, learner tasks, and explanatory comments
+  were added
+- where the self-assessment learning-journal prompts were added
 - what the learner should implement next
 
 An agent should mark checklist items only when explicitly asked to update
