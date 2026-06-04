@@ -1,3 +1,13 @@
 [workspace]
-members = ["guessing-game","hello-world-rust", "rust-control-flow", "rust-embedded-flight/lesson-01-sensor-scaling", "rust-embedded-flight/lesson-02-ownership-copy", "rust-functions", "rust-types", "rust-variables"]
+members = [
+    "guessing-game",
+    "hello-world-rust",
+    "rust-control-flow",
+    "rust-embedded-flight/lesson-01-sensor-scaling",
+    "rust-embedded-flight/lesson-02-ownership-copy",
+    "rust-embedded-flight/lesson-03-slices-fixed-windows",
+    "rust-functions",
+    "rust-types",
+    "rust-variables",
+]
 resolver = "2"

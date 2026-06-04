@@ -1,0 +1,12 @@
+load("@rules_rust//rust:defs.bzl", "rust_library", "rust_test")
+
+rust_library(
+    name = "lib",
+    srcs = ["src/lib.rs"],
+    crate_name = "lesson_03_slices_fixed_windows",
+)
+
+rust_test(
+    name = "test",
+    crate = ":lib",
+)
