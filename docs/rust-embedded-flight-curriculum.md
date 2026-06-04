@@ -145,7 +145,7 @@ should read this section before scaffolding or reviewing lessons.
 
 - [x] Lesson 1: Sensor Scaling Basics
 - [x] Lesson 2: Ownership And Copy Semantics
-- [ ] Lesson 3: Slices And Fixed Windows
+- [x] Lesson 3: Slices And Fixed Windows
 - [ ] Lesson 4: Caller-Provided Buffers
 - [ ] Phase 1 Review Checkpoint
 - [ ] Lesson 5: Structs, Methods, And Newtypes
