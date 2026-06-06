@@ -59,8 +59,8 @@ For each lesson:
 
 Lesson crates should be libraries by default. Add a tiny binary only when the
 lesson clearly benefits from runtime demonstration. The core implementation in
-`src/lib.rs` should stay under 100 lines, excluding tests, comments, `Cargo.toml`,
-and `BUILD.bazel`.
+`src/lib.rs` should stay under 100 lines, excluding tests, comments,
+`Cargo.toml`, and `BUILD.bazel`.
 
 ## Agent Scaffolding Rules
 
@@ -107,18 +107,19 @@ fail by assertion until the learner implements the logic.
 Scaffold comments should make the lesson self-teaching without becoming a
 reference solution. Explain what generated derives do and why they are present,
 what each public API is meant to teach, and what each test proves about the Rust
-concept. Comments may point out hazards such as unsigned underflow, moved values,
-out-of-bounds indexing, partial writes, or panic paths, but should not spell out
-the final implementation line-by-line.
+concept. Comments may point out hazards such as unsigned underflow, moved
+values, out-of-bounds indexing, partial writes, or panic paths, but should not
+spell out the final implementation line-by-line.
 
 Because this repository also acts as a learning journal, each lesson scaffold
 should include the lesson's self-assessment prompts in `src/lib.rs`, with an
 obvious answer area. Put this learning-journal section at the bottom of the file
-by default, after the tests, so the lesson flows from problem setup, to concepts,
-to implementation, to tests, to learner reflection. The scaffold should leave
-answers blank. The learner may fill them in as ordinary comments when completing
-the lesson. Future agents reviewing completion should accept answers in the
-source file, in chat, or an explicit learner decision to skip them.
+by default, after the tests, so the lesson flows from problem setup, to
+concepts, to implementation, to tests, to learner reflection. The scaffold
+should leave answers blank. The learner may fill them in as ordinary comments
+when completing the lesson. Future agents reviewing completion should accept
+answers in the source file, in chat, or an explicit learner decision to skip
+them.
 
 Compiler-error teaching moments should appear as notes in this document or in
 lesson instructions, not as intentionally broken scaffolded code.
@@ -147,8 +148,8 @@ should read this section before scaffolding or reviewing lessons.
 - [x] Lesson 2: Ownership And Copy Semantics
 - [x] Lesson 3: Slices And Fixed Windows
 - [x] Lesson 4: Caller-Provided Buffers
-- [ ] Phase 1 Review Checkpoint
-- [ ] Lesson 5: Structs, Methods, And Newtypes
+- [x] Phase 1 Review Checkpoint
+- [x] Lesson 5: Structs, Methods, And Newtypes
 - [ ] Lesson 6: Enums, Match, Option, And Result
 - [ ] Lesson 7: Error Taxonomy
 - [ ] Lesson 8: State Machines
@@ -173,7 +174,8 @@ implementation satisfies the completion definition below.
 
 When an agent is asked to continue this curriculum, it should:
 
-1. Read this document, especially `Progress Tracking` and the target lesson spec.
+1. Read this document, especially `Progress Tracking` and the target lesson
+   spec.
 2. Select the first unchecked lesson in `Progress Tracking`, unless the user
    explicitly names a different lesson.
 3. If the first unchecked item is a review checkpoint, perform that checkpoint
@@ -181,10 +183,11 @@ When an agent is asked to continue this curriculum, it should:
 4. Scaffold only one lesson at a time unless the user explicitly asks for more.
 5. Do not implement learner-owned logic.
 6. Do not provide a reference solution.
-7. Use safe placeholder implementations that compile and fail tests by assertion.
+7. Use safe placeholder implementations that compile and fail tests by
+   assertion.
 8. Add the lesson to the Cargo workspace and Bazel target graph.
-9. Run the lesson's Bazel test target if feasible and report the expected initial
-   failing status.
+9. Run the lesson's Bazel test target if feasible and report the expected
+   initial failing status.
 
 After scaffolding, the agent should report:
 
@@ -218,8 +221,9 @@ A lesson is complete when all of these are true:
 - any phase checkpoint required after the lesson has been completed before
   moving to the next phase
 
-When marking a lesson complete, update only the relevant checkbox in `Progress
-Tracking`. Do not rewrite lesson specs or alter unrelated checklist items.
+When marking a lesson complete, update only the relevant checkbox in
+`Progress Tracking`. Do not rewrite lesson specs or alter unrelated checklist
+items.
 
 ## Global Constraints
 
@@ -459,8 +463,8 @@ Self-assessment:
 
 Try-this note:
 
-- Try returning a reference to a local array and observe why the compiler rejects
-  it.
+- Try returning a reference to a local array and observe why the compiler
+  rejects it.
 
 ### Lesson 4: Caller-Provided Buffers
 
@@ -880,8 +884,8 @@ Agent scaffolds:
 - `pub struct TelemetryPacket { pub sequence: u8, pub altitude_cm: u16, pub voltage_mv: u16 }`
 - `pub enum ParseError { WrongLength, InvalidHeader }`
 - `pub fn parse_telemetry(bytes: &[u8]) -> Result<TelemetryPacket, ParseError>`
-- tests for valid big-endian packet, wrong length, invalid header, and byte-order
-  behavior
+- tests for valid big-endian packet, wrong length, invalid header, and
+  byte-order behavior
 
 Learner implements:
 

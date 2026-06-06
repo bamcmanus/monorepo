@@ -707,6 +707,10 @@ name = "lesson-04-caller-provided-buffers"
 version = "0.1.0"
 
 [[package]]
+name = "lesson-05-structs-methods-newtypes"
+version = "0.1.0"
+
+[[package]]
 name = "libc"
 version = "0.2.186"
 source = "registry+https://github.com/rust-lang/crates.io-index"
