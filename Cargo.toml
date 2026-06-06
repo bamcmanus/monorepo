@@ -6,6 +6,7 @@ members = [
     "rust-embedded-flight/lesson-01-sensor-scaling",
     "rust-embedded-flight/lesson-02-ownership-copy",
     "rust-embedded-flight/lesson-03-slices-fixed-windows",
+    "rust-embedded-flight/lesson-04-caller-provided-buffers",
     "rust-functions",
     "rust-types",
     "rust-variables",
